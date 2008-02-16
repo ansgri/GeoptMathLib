@@ -1,6 +1,8 @@
 
 package geopt.geometry;
 
+import static geopt.geometry.Utils.*;
+
 /**
  *
  * Вектор в трехмерном геометрическом пространстве.
@@ -9,9 +11,53 @@ package geopt.geometry;
  */
 public class Vector {
     
+    @Override
+    public String toString() {
+        return String.format("%g, %g, %g)", x, y, z);
+    }
+    
+    @Override
+    public boolean equals(Object term) {
+        if ( term instanceof Vector ) {
+            Vector t = (Vector) term;
+            return doubleEquals(t.x, x) 
+                    && doubleEquals(t.y, y) 
+                    && doubleEquals(t.z, z);
+        }
+        return false;
+    }
+
+    @Override // Это не я писал, оно само.
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.x) ^ (Double.doubleToLongBits(this.x) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.y) ^ (Double.doubleToLongBits(this.y) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.z) ^ (Double.doubleToLongBits(this.z) >>> 32));
+        return hash;
+    }
+    
+    // --- Закрытые поля ---
+    
     private double x;
     private double y;
     private double z;
+    
+    // --- Методы доступа к полям ---
+    // По некоторым причинам методов установки нет, только чтение.
+    
+    public double getX() {
+        return x;
+    }
+    
+    public double getY() {
+        return y;
+    }    
+    
+    public double getZ() {
+        return z;
+    }
+    
+    // --- Конструкторы ---
     
     public Vector(double xC, double yC, double zC) {
         x = xC;
@@ -59,7 +105,9 @@ public class Vector {
     }
     
     public static double mixedProduct(Vector term1, Vector term2, Vector term3) {
-        return term1.smul(term2.vmul(term3));
+        return term1.x * (term2.y*term3.z - term2.z*term3.y)
+                - term1.y * (term2.x*term3.z - term2.z*term3.x)
+                + term1.z * (term2.x*term3.y - term2.y*term3.x);
     }
     
     public Vector multiply(double term) {
@@ -82,17 +130,23 @@ public class Vector {
         return this.divide(this.abs());
     }
     
+    // --- Методы, изменяющие текущий экземпляр ---
+    
     public void normalizeIt() {
-        double length = abs();
-        x /= length;
-        y /= length;
-        z /= length;
+        double length = abs();        
+        if ( length != 0 ) {        
+            x /= length;
+            y /= length;
+            z /= length;
+        }
     }
     
     // --- Проверки на коллинеарность, ортогональность итп ---
     
     public boolean isZero() {
-        return x==0 && y==0 && z==0;
+        return equalsZero(x) 
+                && equalsZero(y)
+                && equalsZero(z);
     }
     
     public boolean isCollinear(Vector term) {
@@ -100,7 +154,7 @@ public class Vector {
     }
     
     public boolean isOrthogonal(Vector term) {
-        return this.smul(term) == 0;
+        return equalsZero(this.smul(term));
     }
     
     public boolean isComplanar(Vector term1, Vector term2) {
@@ -108,7 +162,7 @@ public class Vector {
     }
     
     public static boolean isComplanar(Vector term1, Vector term2, Vector term3) {
-        return Vector.mixedProduct(term1, term2, term3) == 0;
+        return equalsZero(Vector.mixedProduct(term1, term2, term3));
     }
     
 }
