@@ -9,11 +9,20 @@ import static geopt.geometry.Utils.*;
  * 
  * @author AnSGri.
  */
-public class Vector {
+public class Vector implements Cloneable {
+    
+    // --- Cloneable members ---
+    
+    @Override
+    public Object clone() {
+        return new Vector(x, y, z);
+    }
+    
+    // --- Переопределение стандартных методов ---
     
     @Override
     public String toString() {
-        return String.format("%g, %g, %g)", x, y, z);
+        return String.format("(%g, %g, %g)", x, y, z);
     }
     
     @Override
@@ -151,6 +160,21 @@ public class Vector {
     
     public boolean isCollinear(Vector term) {
         return this.vmul(term).isZero();
+    }
+    
+    public boolean isCodirectional(Vector term) {
+        if( isCollinear(term) ) {
+            if ( !equalsZero(x) ) {
+                return (x / term.x) > 0;
+            }
+            if ( !equalsZero(y) ) {
+                return (y / term.y) > 0;
+            }            
+            if ( !equalsZero(z) ) {
+                return (z / term.z) > 0;
+            }
+            return true;
+        } else { return false; }
     }
     
     public boolean isOrthogonal(Vector term) {
