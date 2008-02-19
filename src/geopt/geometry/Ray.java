@@ -84,11 +84,7 @@ public class Ray implements Cloneable {
     public Ray invert() {
         return new Ray(origin, direction.multiply(-1.0));
     }
-    
-    /* ////
-     * 
-     * Написать поворот вокруг оси на угол.
-     */
+
     
     // --- Проверка геометрических отношений ---
     
@@ -101,37 +97,6 @@ public class Ray implements Cloneable {
         return direction.isCodirectional(diff);        
     }
     
-    // --- Сравнение Приоритетов Точек ---
-    
-    /**
-     * Сравнение Приоритетов Точек - проекция которой ближе
-     * к началу луча.
-     */    
-    
-    public static final int CP_FIRST_GREATER = 1; // Первая ближе. Или равны.
-    public static final int CP_SECOND_GREATER = -1; // Вторая ближе.
-    public static final int CP_INDETERMINATE = 0; // Ни одна не подходит.
-    
-    public int comparePriorities(Vector firstPoint, Vector secondPoint) {
-        Vector relativeFirst = firstPoint.subtract(origin);
-        Vector relativeSecond = secondPoint.subtract(origin);
-        
-        double firstProj = direction.smul(relativeFirst);
-        double secondProj = direction.smul(relativeSecond);
-        
-        if ( !equalsZero(firstProj) ) {
-            if ( firstProj >= secondProj ) {
-                return CP_FIRST_GREATER;
-            } else { 
-                return CP_SECOND_GREATER; 
-            }
-        } else if ( !equalsZero(secondProj) ) {
-            return CP_SECOND_GREATER;
-        } else { 
-            return CP_INDETERMINATE; 
-        }
-    }
-    
-    // --- ---
+
     
 }

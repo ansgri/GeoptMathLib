@@ -139,6 +139,13 @@ public class Vector implements Cloneable {
         return this.divide(this.abs());
     }
     
+        
+    /* ////
+     * 
+     * Написать поворот вокруг оси на угол.
+     */
+    
+    
     // --- Методы, изменяющие текущий экземпляр ---
     
     public void normalizeIt() {
