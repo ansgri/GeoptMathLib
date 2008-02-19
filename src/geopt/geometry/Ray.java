@@ -14,6 +14,11 @@ public class Ray implements Cloneable {
     
     // --- Конструкторы ---
     
+    public Ray() {
+        origin = new Vector(0.0, 0.0, 0.0);
+        direction = new Vector(1.0, 0.0, 0.0);
+    }
+    
     public Ray(Vector aOrigin, Vector aDirection)
             throws IllegalArgumentException {
         
@@ -59,8 +64,8 @@ public class Ray implements Cloneable {
     
     // --- Закрытые поля ---
     
-    private Vector origin;
-    private Vector direction;
+    protected Vector origin;
+    protected Vector direction;
     
     // --- ---
 
@@ -95,5 +100,38 @@ public class Ray implements Cloneable {
         Vector diff = point.subtract(origin);
         return direction.isCodirectional(diff);        
     }
+    
+    // --- Сравнение Приоритетов Точек ---
+    
+    /**
+     * Сравнение Приоритетов Точек - проекция которой ближе
+     * к началу луча.
+     */    
+    
+    public static final int CP_FIRST_GREATER = 1; // Первая ближе. Или равны.
+    public static final int CP_SECOND_GREATER = -1; // Вторая ближе.
+    public static final int CP_INDETERMINATE = 0; // Ни одна не подходит.
+    
+    public int comparePriorities(Vector firstPoint, Vector secondPoint) {
+        Vector relativeFirst = firstPoint.subtract(origin);
+        Vector relativeSecond = secondPoint.subtract(origin);
+        
+        double firstProj = direction.smul(relativeFirst);
+        double secondProj = direction.smul(relativeSecond);
+        
+        if ( !equalsZero(firstProj) ) {
+            if ( firstProj >= secondProj ) {
+                return CP_FIRST_GREATER;
+            } else { 
+                return CP_SECOND_GREATER; 
+            }
+        } else if ( !equalsZero(secondProj) ) {
+            return CP_SECOND_GREATER;
+        } else { 
+            return CP_INDETERMINATE; 
+        }
+    }
+    
+    // --- ---
     
 }
