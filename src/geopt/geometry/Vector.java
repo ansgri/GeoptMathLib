@@ -47,9 +47,9 @@ public class Vector implements Cloneable {
     
     // --- Закрытые поля ---
     
-    private double x;
-    private double y;
-    private double z;
+    protected double x;
+    protected double y;
+    protected double z;
     
     // --- Методы доступа к полям ---
     // По некоторым причинам методов установки нет, только чтение.
@@ -72,6 +72,10 @@ public class Vector implements Cloneable {
         x = xC;
         y = yC;
         z = zC;
+    }
+    
+    public Vector() {
+        x = y = z = 0;
     }
     
     // --- элементарные операции над векторами ---
@@ -194,6 +198,18 @@ public class Vector implements Cloneable {
     
     public static boolean isComplanar(Vector term1, Vector term2, Vector term3) {
         return equalsZero(Vector.mixedProduct(term1, term2, term3));
+    }
+    
+    // --- Операции посложнее ---
+    
+    public Vector reflectAround(Vector axis) {
+        if ( axis.isZero() ) {
+            throw new IllegalArgumentException();
+        }
+        Vector nd = axis.normalize();
+        
+        // -This + 2*(This, Nd)*nd         
+        return this.add(nd.multiply(this.smul(nd)*2)).multiply(-1);
     }
     
 }
