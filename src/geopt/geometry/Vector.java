@@ -29,9 +29,12 @@ public class Vector implements Cloneable {
     public boolean equals(Object term) {
         if ( term instanceof Vector ) {
             Vector t = (Vector) term;
+            
             return doubleEquals(t.x, x) 
                     && doubleEquals(t.y, y) 
                     && doubleEquals(t.z, z);
+
+           // return equalsZero(subtract(t).square());
         }
         return false;
     }
@@ -82,6 +85,10 @@ public class Vector implements Cloneable {
     
     public double abs() {
         return Math.sqrt(x*x + y*y + z*z);
+    }
+    
+    public double square() {
+        return x*x + y*y + z*z;
     }
     
     public Vector add(Vector term) {

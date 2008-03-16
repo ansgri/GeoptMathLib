@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Theone" name="geopt.geometry.VectorTest" tests="7" time="0.13" timestamp="2008-03-16T15:03:13">
+<testsuite errors="0" failures="0" hostname="Theone" name="geopt.geometry.PlaneTest" tests="1" time="0.1" timestamp="2008-03-16T15:03:12">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -261,23 +261,11 @@
     <property name="libs.struts.maven-pom" value="" />
     <property name="sun.arch.data.model" value="32" />
   </properties>
-  <testcase classname="geopt.geometry.VectorTest" name="smul" time="0.013" />
-  <testcase classname="geopt.geometry.VectorTest" name="vmul" time="0.0060" />
-  <testcase classname="geopt.geometry.VectorTest" name="mixedProduct" time="0.0020" />
-  <testcase classname="geopt.geometry.VectorTest" name="isCollinear" time="0.0030" />
-  <testcase classname="geopt.geometry.VectorTest" name="isOrthogonal" time="0.0040" />
-  <testcase classname="geopt.geometry.VectorTest" name="isComplanar" time="0.0030" />
-  <testcase classname="geopt.geometry.VectorTest" name="abs" time="0.0020" />
-  <system-out><![CDATA[smul
-vmul
-(1.00000, 0.00000, 0.00000)
-(0.00000, 1.00000, 0.00000)
-(0.00000, 0.00000, 1.00000)
-mixedProduct
-isCollinear
-isOrthogonal
-isComplanar
-abs
+  <testcase classname="geopt.geometry.PlaneTest" name="intersectRay" time="0.013" />
+  <system-out><![CDATA[Plane#intersectRay
+result: (0.00000, 0.00000, 1.00000)
+result: null
+result: (0.500000, 1.00000, 0.500000)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

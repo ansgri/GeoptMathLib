@@ -13,7 +13,7 @@ public class Utils {
     
     // Максимально допустимое относительное отклонение для
     // чисел, для того чтобы они считались равными.
-    private static double relativeTolerance = Double.MIN_VALUE;
+    private static double relativeTolerance = 1.0e-15;
     
     // Установка максимально допустимого относительного отклонения двух
     // равных чисел.
@@ -36,6 +36,10 @@ public class Utils {
     // Проверка на равенство нулю в пределах погрешности.
     public static boolean equalsZero(double term) {
         return Math.abs(term) < relativeTolerance;
+    }
+    
+    public static boolean equalsOne(double term) {
+        return Math.abs(term - 1) < relativeTolerance;
     }
     
     

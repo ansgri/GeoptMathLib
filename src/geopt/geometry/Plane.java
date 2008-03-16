@@ -11,7 +11,7 @@ package geopt.geometry;
  *
  * @author AnSGri.
  */
-public class Plane {
+public class Plane implements Cloneable{
     
     // --- Конструктор ---
     
@@ -68,7 +68,35 @@ public class Plane {
     private Vector somePoint;
     private Vector normalVector;
     
-    // --- ---
+    // --- Пересечения ---
+    
+    /**
+     * 
+     * Нахождение пересечения плоскости с лучом.
+     * 
+     * @param rayToIntersect Пересекающий луч.
+     * @return Точка пересечения или null, если таковых нет.
+     */
+    public Vector intersectRay(Ray rayToIntersect) {
+        try {
+            double denom = rayToIntersect.direction.smul(normalVector);
+            if ( Utils.equalsZero(denom) ) {
+                return null;
+            }
+            
+            double tX = somePoint.subtract(rayToIntersect.origin)
+                    .smul(normalVector) / denom;
+            if ( tX < 0 ) {
+                return null;
+            }
+            
+            return rayToIntersect.origin 
+                    .add(rayToIntersect.direction.multiply(tX));
+            
+        } catch (Exception ex) {
+            return null;
+        }
+    }
     
     
 
