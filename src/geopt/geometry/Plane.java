@@ -68,6 +68,16 @@ public class Plane implements Cloneable{
     private Vector somePoint;
     private Vector normalVector;
     
+    // --- Методы доступа к закрытым полям ---
+    
+    public Vector getSomePoint() {
+        return somePoint;
+    }
+    
+    public Vector getNormalVector() {
+        return normalVector;
+    }
+    
     // --- Пересечения ---
     
     /**

@@ -81,6 +81,14 @@ public class Ray implements Cloneable {
     
     // --- Элементарные геометрические операции ---
     
+    public Ray shift(double distance) {
+        return new Ray(origin.add(direction.multiply(distance)), direction);
+    }
+    
+    public void smallShiftIt() {
+        origin = origin.add(direction.multiply(1.0e-12));
+    }
+    
     public Ray invert() {
         return new Ray(origin, direction.multiply(-1.0));
     }

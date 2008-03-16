@@ -209,6 +209,11 @@ public class Vector implements Cloneable {
     
     // --- Операции посложнее ---
     
+    /**
+     * 
+     * @param axis
+     * @return
+     */
     public Vector reflectAround(Vector axis) {
         if ( axis.isZero() ) {
             throw new IllegalArgumentException();
