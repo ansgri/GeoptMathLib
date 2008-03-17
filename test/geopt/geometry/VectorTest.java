@@ -85,6 +85,16 @@ public class VectorTest {
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void reflectAround() {
+        System.out.println("reflectAround");
+        Vector term1 = new Vector(0, 1.0, 1.0);
+        Vector axis = new Vector(0, 0.0, -1.0);
+        Vector expected = new Vector(0, 1.0, -1.0);
+        Vector result = term1.reflectAround(axis);
+        assertEquals(expected, result);
+    }
+    
     /**
      * Test of mixedProduct method, of class Vector.
      */

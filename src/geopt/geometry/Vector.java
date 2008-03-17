@@ -221,7 +221,7 @@ public class Vector implements Cloneable {
         Vector nd = axis.normalize();
         
         // -This + 2*(This, Nd)*nd         
-        return this.add(nd.multiply(this.smul(nd)*2)).multiply(-1);
+        return this.multiply(-1).add(nd.multiply(this.smul(nd)*2)).multiply(-1);
     }
     
 }
