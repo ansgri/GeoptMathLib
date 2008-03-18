@@ -185,5 +185,32 @@ public class VectorTest {
                     .isComplanar(terms1[i], terms2[i]));
         }
     }
+    
+/*   
+    @Test
+    public void rotateAround() {
+        System.out.println("isComplanar");
+        
+        Vector[] instances = new Vector[] {
+            new Vector(1, 1, 0)
+        };
+        Vector[] axes = new Vector[] {
+            new Vector(0, 1, 0)
+        };
+        double[] angles = new double[] {
+            Math.PI * 0.5
+        };
+        Vector[] expected = new Vector[] {
+            new Vector(0, 1, 1)
+        };
+        
+        for ( int i = 0; i < instances.length; i++ ) {
+            assertEquals(expected[i], instances[i]
+                    .rotateAround(axes[i], angles[i]));
+        }        
+            
+        
+    }
+ */
 
 }

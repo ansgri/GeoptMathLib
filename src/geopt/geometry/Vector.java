@@ -224,4 +224,24 @@ public class Vector implements Cloneable {
         return this.multiply(-1).add(nd.multiply(this.smul(nd)*2)).multiply(-1);
     }
     
+    /*
+    public Vector rotateAround(Vector axis, double angle) {
+        Vector vprod = axis.vmul(this);
+        double sprod = this.smul(axis);
+        double cosHalf = Math.cos(angle/2);
+        double sinHalf = Math.sin(angle/2);
+        double cosAngle = Math.cos(angle);
+        
+        axis.normalizeIt();
+        
+        Vector result = axis
+                .multiply(sprod * sinHalf * sinHalf)
+                .add(this.multiply(cosAngle * cosAngle))
+                .subtract(vprod.multiply(cosHalf * sinHalf))
+                .add(axis.vmul(vprod).multiply(sinHalf * sinHalf));
+        
+        return result;
+    }
+     */
+    
 }

@@ -44,5 +44,18 @@ public class Utils {
     
     
     // ---  ---
+
+    public static Vector refract(Vector direction, Vector normal, double n1, double n2) {
+        assert equalsOne(normal.abs());
+        
+        Vector b = normal.multiply(direction.smul(normal));
+        Vector c = direction.subtract(b);
+        double phi1 = Math.atan2(c.abs(), b.abs());
+        double phi2 = Math.asin(n1/n2 * Math.sin(phi1));
+        
+        Vector result = b.normalize().add(c.normalize().multiply(Math.tan(phi2)));
+        
+        return result;        
+    }
     
 }
