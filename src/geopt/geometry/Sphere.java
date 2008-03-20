@@ -13,7 +13,7 @@ import static geopt.geometry.Utils.*;
  * 
  * @author AnSGri.
  */
-public class Sphere implements Cloneable{
+public class Sphere implements Cloneable {
 
     // --- Конструктор ---
     
@@ -61,6 +61,32 @@ public class Sphere implements Cloneable{
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.radius) ^ (Double.doubleToLongBits(this.radius) >>> 32));
         hash = 97 * hash + (this.center != null ? this.center.hashCode() : 0);
         return hash;
+    }
+    
+    // --- Внутренний группирующий класс ---
+    
+    /**
+     * Внутренний класс.
+     * Информация о пересечении.
+     */
+    private class IntersectionInfo {
+        /**
+         * True если пересечение снаружи, если внутреннее - то False.
+         */
+        public boolean outersect;
+        
+        /**
+         * Точка пересечения.
+         */
+        public Vector intersection;
+        
+        /**
+         * Конструктор + подсчет пересечения.
+         * @param rayToTest пересекаемый луч.
+         */
+        public IntersectionInfo(Ray rayToTest) {
+            throw new UnsupportedOperationException("Unimplemented.");
+        }
     }
     
     // --- Закрытые поля ---
