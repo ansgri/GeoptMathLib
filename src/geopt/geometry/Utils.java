@@ -45,13 +45,42 @@ public class Utils {
     
     // ---  ---
 
-    public static Vector refract(Vector direction, Vector normal, double n1, double n2) {
+    /**
+     * 
+     * Преломление вектора 
+     * на поверхности с относительным показателем преломления n
+     * и внешней нормалью normal.
+     * Учитывается эффект полного внутреннего отражения.
+     * Изменение интенсивности не учитывается.
+     * n = n1/n2, где n1 - показатель преломления с внутренней стороны поверхности,
+     * n2 соответственно с внешней.
+     * 
+     * n != 0
+     * normal.abs() == 1
+     * 
+     * @param direction
+     * @param normal
+     * @param n
+     * @return
+     */
+    public static Vector refract(Vector direction, Vector normal, double n) {
         assert equalsOne(normal.abs());
+        assert n != 0;
         
-        Vector b = normal.multiply(direction.smul(normal));
+        double normalProjection = normal.smul(direction);
+        if ( normalProjection < 0 ) {
+            n = 1 / n;            
+        }
+        
+        Vector b = normal.multiply(normalProjection);
         Vector c = direction.subtract(b);
         double phi1 = Math.atan2(c.abs(), b.abs());
-        double phi2 = Math.asin(n1/n2 * Math.sin(phi1));
+        double newSine = n * Math.sin(phi1);
+        if ( newSine > 1 ) {
+            return direction.reflectAround(normal);
+        }
+        
+        double phi2 = Math.asin(newSine);
         
         Vector result = b.normalize().add(c.normalize().multiply(Math.tan(phi2)));
         

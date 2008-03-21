@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Theone" name="geopt.geometry.VectorTest" tests="8" time="0.168" timestamp="2008-03-18T18:14:17">
+<testsuite errors="0" failures="0" hostname="Theone" name="geopt.geometry.VectorTest" tests="8" time="0.139" timestamp="2008-03-21T10:15:49">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -149,13 +149,13 @@
     <property name="libs.junit.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\junit-3.8.2.jar" />
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_04\jre\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\prog\ruby\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Microsoft SQL Server\90\Tools\binn\" />
     <property name="libs.webui.javadoc" value="C:\Program Files\NetBeans 6.0\visualweb1\docs\webui-doc.zip" />
-    <property name="libs.toplink.javadoc" value="C:\Program Files\NetBeans 6.0\enterprise4\docs\javaee5-doc-api.zip" />
     <property name="libs.PostgreSQLDriver.javadoc" value="" />
+    <property name="libs.toplink.javadoc" value="C:\Program Files\NetBeans 6.0\enterprise4\docs\javaee5-doc-api.zip" />
     <property name="libs.jsfsupport-designtime.javadoc" value="C:\Program Files\NetBeans 6.0\visualweb1\docs\appbase-doc.zip;C:\Program Files\NetBeans 6.0\visualweb1\docs\dataprovider-doc.zip;C:\Program Files\NetBeans 6.0\visualweb1\docs\jsfcl-doc.zip" />
     <property name="ant.java.version" value="1.6" />
-    <property name="java.class.version" value="50.0" />
-    <property name="basedir" value="E:\ASG\projects\Geopt\GeoptMathLib" />
     <property name="javadoc.noindex" value="false" />
+    <property name="basedir" value="E:\ASG\projects\Geopt\GeoptMathLib" />
+    <property name="java.class.version" value="50.0" />
     <property name="sun.awt.exception.handler" value="org.netbeans.core.startup.TopLogging$AWTHandler" />
     <property name="javac.test.classpath" value=":build/classes:C:\Program Files\NetBeans 6.0\java1\modules\ext\junit-4.1.jar" />
     <property name="ant.home" value="C:\Program Files\NetBeans 6.0\java1\ant" />
@@ -164,47 +164,46 @@
     <property name="libs.toplink.src" value="" />
     <property name="libs.javac-api.javadoc" value="" />
     <property name="javadoc.preview" value="true" />
-    <property name="libs.MySQLDriver.maven-pom" value="" />
     <property name="rave.version" value="2.0.0" />
+    <property name="libs.MySQLDriver.maven-pom" value="" />
     <property name="libs.CopyLibs.javadoc" value="" />
     <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files\NetBeans 6.0\ide8\modules\ext\postgresql-8.2-506.jdbc3.jar" />
-    <property name="libs.junit_4.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\junit-4.1.jar" />
     <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="libs.junit_4.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\junit-4.1.jar" />
     <property name="libs.jdbcsupport-designtime.classpath" value="C:\Program Files\NetBeans 6.0\visualweb1\modules\ext\sqlx.jar" />
     <property name="build.dir" value="build" />
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_04\jre\bin" />
     <property name="libs.webui-designtime.src" value="C:\Program Files\NetBeans 6.0\visualweb1\docs\webui-src.zip" />
-    <property name="libs.swing-app-framework.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\appframework-1.0.3.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\swing-worker-1.1.jar" />
     <property name="sun.management.compiler" value="HotSpot Client Compiler" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.swing-app-framework.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\appframework-1.0.3.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\swing-worker-1.1.jar" />
     <property name="user.variant" value="" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="javadoc.windowtitle" value="" />
     <property name="libs.jstl11.javadoc" value="C:\Program Files\NetBeans 6.0\enterprise4\docs\javaee5-doc-api.zip" />
-    <property name="run.jvmargs" value="" />
     <property name="libs.IdentityAntTasks.src" value="" />
+    <property name="run.jvmargs" value="" />
     <property name="build.compiler.emacs" value="true" />
     <property name="libs.jstl11.src" value="" />
     <property name="ant.project.name" value="GeoptMathLib" />
     <property name="libs.swing-layout.classpath" value="C:\Program Files\NetBeans 6.0\platform7\modules\ext\swing-layout-1.0.3.jar" />
     <property name="libs.IdentityAntTasks.maven-pom" value="" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="java.vm.specification.version" value="1.0" />
     <property name="work.dir" value="E:\ASG\projects\Geopt\GeoptMathLib" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="javadoc.use" value="true" />
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
     <property name="libs.exceptionhandler-runtime.src" value="" />
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_04\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
     <property name="libs.jdbcsupport-runtime.javadoc" value="" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_04\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
     <property name="os.version" value="6.0" />
     <property name="libs.jstl11.classpath" value="C:\Program Files\NetBeans 6.0\enterprise4\modules\ext\standard.jar;C:\Program Files\NetBeans 6.0\enterprise4\modules\ext\jstl.jar" />
     <property name="excludes" value="" />
     <property name="user.home" value="C:\Users\ASG" />
-    <property name="libs.jaxb21.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\activation.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\api\jaxb-api.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\jaxb-impl.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\jaxb-xjc.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\api\jsr173_api.jar" />
     <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
-    <property name="javax.xml.parsers.DocumentBuilderFactory" value="org.netbeans.core.startup.DOMFactoryImpl" />
+    <property name="libs.jaxb21.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\activation.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\api\jaxb-api.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\jaxb-impl.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\jaxb-xjc.jar;C:\Program Files\NetBeans 6.0\java1\modules\ext\jaxws21\api\jsr173_api.jar" />
     <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="javax.xml.parsers.DocumentBuilderFactory" value="org.netbeans.core.startup.DOMFactoryImpl" />
     <property name="libs.struts.src" value="" />
     <property name="libs.absolutelayout.maven-pom" value="" />
     <property name="user.dir" value="E:\ASG\projects\Geopt\GeoptMathLib" />
@@ -215,8 +214,8 @@
     <property name="libs.woodstock-components.src" value="C:\Program Files\NetBeans 6.0\visualweb1\docs\webui-jsf-src.zip" />
     <property name="java.vm.version" value="10.0-b19" />
     <property name="libs.MySQLDriver.src" value="" />
-    <property name="java.class.path" value="E:\ASG\projects\Geopt\GeoptMathLib\build\classes;C:\Program Files\NetBeans 6.0\java1\modules\ext\junit-4.1.jar;E:\ASG\projects\Geopt\GeoptMathLib\build\test\classes;C:\Program Files\NetBeans 6.0\java1\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 6.0\java1\ant\lib\ant.jar;C:\Program Files\NetBeans 6.0\java1\ant\lib\ant-junit.jar" />
     <property name="libs.webui-designtime.classpath" value="C:\Program Files\NetBeans 6.0\visualweb1\modules\ext\webui.jar;C:\Program Files\NetBeans 6.0\enterprise4\modules\ext\commons-fileupload-1.0.jar" />
+    <property name="java.class.path" value="E:\ASG\projects\Geopt\GeoptMathLib\build\classes;C:\Program Files\NetBeans 6.0\java1\modules\ext\junit-4.1.jar;E:\ASG\projects\Geopt\GeoptMathLib\build\test\classes;C:\Program Files\NetBeans 6.0\java1\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 6.0\java1\ant\lib\ant.jar;C:\Program Files\NetBeans 6.0\java1\ant\lib\ant-junit.jar" />
     <property name="javax.xml.parsers.SAXParserFactory" value="org.netbeans.core.startup.SAXFactoryImpl" />
     <property name="os.arch" value="x86" />
     <property name="javac.deprecation" value="false" />
@@ -240,7 +239,6 @@
     <property name="libs.theme-default-gray.classpath" value="C:\Program Files\NetBeans 6.0\visualweb1\modules\ext\defaulttheme-gray.jar" />
     <property name="libs.beans-binding.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\beansbinding-1.2.1.jar" />
     <property name="have.tests" value="true" />
-    <property name="org.netbeans.lib.profiler.servletTracking" value="true" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
     <property name="libs.javac-api.classpath" value="C:\Program Files\NetBeans 6.0\java1\modules\ext\javac-api.jar" />
     <property name="user.country" value="RU" />
@@ -253,24 +251,24 @@
     <property name="javadoc.additionalparam" value="" />
     <property name="javac.classpath" value="" />
     <property name="build.classes.dir" value="build/classes" />
-    <property name="libs.swing-layout.javadoc" value="C:\Program Files\NetBeans 6.0\platform7\docs\swing-layout-1.0.3-doc.zip" />
     <property name="libs.swing-layout.src" value="C:\Program Files\NetBeans 6.0\platform7\docs\swing-layout-1.0.3-src.zip" />
-    <property name="javac.target" value="1.5" />
+    <property name="libs.swing-layout.javadoc" value="C:\Program Files\NetBeans 6.0\platform7\docs\swing-layout-1.0.3-doc.zip" />
     <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="javac.target" value="1.5" />
     <property name="libs.theme-default-green.runtime" value="C:\Program Files\NetBeans 6.0\visualweb1\modules\ext\defaulttheme-green.jar" />
     <property name="libs.swing-app-framework.src" value="" />
     <property name="java.specification.version" value="1.6" />
     <property name="libs.struts.maven-pom" value="" />
     <property name="sun.arch.data.model" value="32" />
   </properties>
-  <testcase classname="geopt.geometry.VectorTest" name="smul" time="0.014" />
-  <testcase classname="geopt.geometry.VectorTest" name="vmul" time="0.0070" />
+  <testcase classname="geopt.geometry.VectorTest" name="smul" time="0.012" />
+  <testcase classname="geopt.geometry.VectorTest" name="vmul" time="0.0060" />
   <testcase classname="geopt.geometry.VectorTest" name="reflectAround" time="0.0030" />
   <testcase classname="geopt.geometry.VectorTest" name="mixedProduct" time="0.0020" />
-  <testcase classname="geopt.geometry.VectorTest" name="isCollinear" time="0.0070" />
-  <testcase classname="geopt.geometry.VectorTest" name="isOrthogonal" time="0.0040" />
-  <testcase classname="geopt.geometry.VectorTest" name="isComplanar" time="0.0090" />
-  <testcase classname="geopt.geometry.VectorTest" name="abs" time="0.0030" />
+  <testcase classname="geopt.geometry.VectorTest" name="isCollinear" time="0.0050" />
+  <testcase classname="geopt.geometry.VectorTest" name="isOrthogonal" time="0.0020" />
+  <testcase classname="geopt.geometry.VectorTest" name="isComplanar" time="0.0020" />
+  <testcase classname="geopt.geometry.VectorTest" name="abs" time="0.0020" />
   <system-out><![CDATA[smul
 vmul
 (1.00000, 0.00000, 0.00000)

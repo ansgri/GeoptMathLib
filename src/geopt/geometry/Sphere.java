@@ -40,7 +40,7 @@ public class Sphere implements Cloneable {
     
     @Override
     public Object clone() {
-        return new Sphere(center, radius);
+        return new Sphere(getCenter(),getRadius());
     }
     
     // --- Переопределение сравнения и прочих стандартных. ---
@@ -49,7 +49,7 @@ public class Sphere implements Cloneable {
     public boolean equals(Object term) {
         if ( term instanceof Sphere ) {
             Sphere sph = (Sphere)term;
-            return sph.radius == radius && sph.center.equals(center);
+            return sph.getRadius() == getRadius() && sph.getCenter().equals(getCenter());
         } else {
             return false;
         }
@@ -58,37 +58,12 @@ public class Sphere implements Cloneable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.radius) ^ (Double.doubleToLongBits(this.radius) >>> 32));
-        hash = 97 * hash + (this.center != null ? this.center.hashCode() : 0);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.getRadius()) ^ (Double.doubleToLongBits(this.getRadius()) >>> 32));
+        hash = 97 * hash + (this.getCenter() != null ? this.getCenter().hashCode() : 0);
         return hash;
     }
     
-    // --- Внутренний группирующий класс ---
-    
-    /**
-     * Внутренний класс.
-     * Информация о пересечении.
-     */
-    private class IntersectionInfo {
-        /**
-         * True если пересечение снаружи, если внутреннее - то False.
-         */
-        public boolean outersect;
-        
-        /**
-         * Точка пересечения.
-         */
-        public Vector intersection;
-        
-        /**
-         * Конструктор + подсчет пересечения.
-         * @param rayToTest пересекаемый луч.
-         */
-        public IntersectionInfo(Ray rayToTest) {
-            throw new UnsupportedOperationException("Unimplemented.");
-        }
-    }
-    
+   
     // --- Закрытые поля ---
     
     private double radius;
@@ -106,9 +81,9 @@ public class Sphere implements Cloneable {
     public Vector intersectRay(Ray rayToIntersect) {
         double cA = rayToIntersect.direction.square();
         double cB = 2 * rayToIntersect.direction
-                .smul(rayToIntersect.origin.subtract(center));
-        double cC = rayToIntersect.origin.subtract(center).square()
-                - radius*radius;
+                .smul(rayToIntersect.origin.subtract(getCenter()));
+        double cC = rayToIntersect.origin.subtract(getCenter()).square()
+                - getRadius()*getRadius();
         
         double discriminant = cB*cB - 4*cA*cC;
         
@@ -127,6 +102,16 @@ public class Sphere implements Cloneable {
         
         return rayToIntersect.origin 
                     .add(rayToIntersect.direction.multiply(t));
+    }
+
+    // --- Методы доступа ---
+    
+    public double getRadius() {
+        return radius;
+    }
+
+    public Vector getCenter() {
+        return center;
     }
     
 }

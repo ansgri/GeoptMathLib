@@ -150,12 +150,6 @@ public class Vector implements Cloneable {
         return this.divide(this.abs());
     }
     
-        
-    /* ////
-     * 
-     * Написать поворот вокруг оси на угол.
-     */
-    
     
     // --- Методы, изменяющие текущий экземпляр ---
     
@@ -214,11 +208,11 @@ public class Vector implements Cloneable {
      * @param axis
      * @return
      */
-    public Vector reflectAround(Vector axis) {
-        if ( axis.isZero() ) {
+    public Vector reflectAround(Vector normal) {
+        if ( normal.isZero() ) {
             throw new IllegalArgumentException();
         }
-        Vector nd = axis.normalize();
+        Vector nd = normal.normalize();
         
         // -This + 2*(This, Nd)*nd         
         return this.multiply(-1).add(nd.multiply(this.smul(nd)*2)).multiply(-1);

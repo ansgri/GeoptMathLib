@@ -46,18 +46,40 @@ public class UtilsTest {
     @Test
     public void refract() {
         System.out.println("refract");
-        Vector direction = new Vector(1, -1, 0);
-        Vector normal = new Vector(0, 1, 0);
-        double n1 = 1.0;
-        double n2 = 1.5;
-        double phi2 = asin(sqrt(2) / 3);
-        Vector expResult = new Vector(sin(phi2), -cos(phi2), 0);
-        Vector result = Utils.refract(direction, normal, n1, n2);
-        System.out.println("expected: ".concat(expResult.toString()));
-        System.out.println("was: ".concat(result.toString()));
+        Vector[] directions = new Vector[] {
+            new Vector(1, -1, 0),
+            new Vector(1, -1, 0),
+            new Vector(1, -1, 0)
+        };
+        Vector[] normals = new Vector[] {
+            new Vector(0, 1, 0),
+            new Vector(0, -1, 0),
+            new Vector(0, -1, 0)
+        };
+        double[] ns = new double[] {
+            1.5,
+            1.0/1.5,
+            3.0
+        };
+        double[] phi2s = new double[] {
+            asin(sqrt(2) / 3),
+            asin(sqrt(2) / 3),
+            0.0
+        };
+        Vector[] expResults = new Vector[] {
+            new Vector(sin(phi2s[0]), -cos(phi2s[0]), 0),
+            new Vector(sin(phi2s[1]), -cos(phi2s[1]), 0),
+            new Vector(1, 1, 0)
+        };
         
-        assertTrue(expResult.isCodirectional(result));
-        // TODO review the generated test code and remove the default call to fail.
+        for ( int i = 0; i < directions.length; i++ ) {
+
+            Vector result = Utils.refract(directions[i], normals[i], ns[i]);
+            System.out.println("expected: ".concat(expResults[i].toString()));
+            System.out.println("was: ".concat(result.toString()));
+
+            assertTrue(expResults[i].isCodirectional(result));
+        }
     }
 
 }
