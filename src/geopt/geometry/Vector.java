@@ -25,6 +25,34 @@ public class Vector implements Cloneable {
         return String.format("(%g, %g, %g)", x, y, z);
     }
     
+    /**
+     * 
+     * Преобразование строки в вектор. Формат (x; y; z) или x;y;z
+     * 
+     * @param str Разбираемая строка
+     * @return Vector, представляемый данной строкой
+     * @throws java.lang.NumberFormatException в случае, если строка имеет неверный формат.
+     */
+    public static Vector parse(String str) throws NumberFormatException {
+        String[] parts = str.split("\\(\\s*|\\s*\\)|\\s*;\\s*");
+        
+        /*for ( int i = 0; i < parts.length; i++ ) {
+            System.out.printf("%1$d> %2$s\n", i, parts[i]);
+        }*/ 
+        
+        if ( parts.length == 3 ) {
+            return new Vector(
+                    Double.parseDouble(parts[0]),
+                    Double.parseDouble(parts[1]),
+                    Double.parseDouble(parts[2]));
+        } else if ( parts.length > 3 ) {
+            return new Vector(
+                    Double.parseDouble(parts[1]),
+                    Double.parseDouble(parts[2]),
+                    Double.parseDouble(parts[3]));
+        } else throw new NumberFormatException();
+    }
+    
     @Override
     public boolean equals(Object term) {
         if ( term instanceof Vector ) {

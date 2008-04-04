@@ -186,6 +186,28 @@ public class VectorTest {
         }
     }
     
+    @Test
+    public void parse() {
+        System.out.println("parse");
+        
+        String[] sources = new String[] {
+            "1;2;3",
+            "(1;2;3)",
+            "2; 3; 4",
+            "1.03 ; -2.5e+3;0"
+        };
+        Vector[] results = new Vector[] {
+            new Vector(1,2,3),
+            new Vector(1,2,3),
+            new Vector(2,3,4),
+            new Vector(1.03, -2.5e3, 0)
+        };
+        
+        for ( int i = 0; i < sources.length; i++ ) {
+            assertEquals(results[i], Vector.parse(sources[i]));
+        }
+    }
+    
 /*   
     @Test
     public void rotateAround() {
