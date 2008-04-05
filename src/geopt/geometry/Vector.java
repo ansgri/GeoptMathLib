@@ -22,7 +22,7 @@ public class Vector implements Cloneable {
     
     @Override
     public String toString() {
-        return String.format("(%g, %g, %g)", x, y, z);
+        return String.format("(%g; %g; %g)", x, y, z);
     }
     
     /**

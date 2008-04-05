@@ -33,6 +33,20 @@ public class Color {
         
     }
     
+    public Color(java.awt.Color color) {
+        this.red = color.getRed() / 255.0;
+        this.green = color.getGreen() / 255.0;
+        this.blue = color.getBlue() / 255.0;
+    }
+    
+    public int toARGBColor() {
+        int r = (int)(255 * getR());
+        int g = (int)(255 * getG());
+        int b = (int)(255 * getB());
+        int a = 255;
+        return (a << 24) | (r << 16) | (g << 8) | b;
+    }
+    
     @Override
     public Object clone() {
         return new Color(red, green, blue);
