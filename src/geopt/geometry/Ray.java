@@ -86,7 +86,7 @@ public class Ray implements Cloneable {
     }
     
     public void smallShiftIt() {
-        origin = origin.add(direction.multiply(1.0e-12));
+        origin = origin.add(direction.multiply(1.0e-5));
     }
     
     public Ray invert() {

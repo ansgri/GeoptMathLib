@@ -48,6 +48,11 @@ public class Color {
     }
     
     @Override
+    public String toString() {
+        return String.format("(%g; %g; %g)", red, green, blue);
+    }
+    
+    @Override
     public Object clone() {
         return new Color(red, green, blue);
     }

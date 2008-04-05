@@ -63,6 +63,11 @@ public class Sphere implements Cloneable {
         return hash;
     }
     
+    @Override
+    public String toString() {
+        return String.format("Sphere(%s, %g)", center, radius);
+    }
+    
    
     // --- Закрытые поля ---
     
