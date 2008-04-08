@@ -5,13 +5,15 @@
 
 package geopt.geometry;
 
+import java.io.Serializable;
+
 /**
  * 
  * Плоскость. Задается точкой и направлением.
  *
  * @author AnSGri.
  */
-public class Plane implements Cloneable{
+public class Plane implements Cloneable, Serializable{
     
     // --- Конструктор ---
     

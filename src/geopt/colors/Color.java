@@ -6,6 +6,7 @@
 package geopt.colors;
 
 import geopt.geometry.Vector;
+import java.io.Serializable;
 
 /**
  *
@@ -13,7 +14,7 @@ import geopt.geometry.Vector;
  * 
  * @author AnSGri
  */
-public class Color {
+public class Color implements Serializable {
     // --- Закрытые поля ---
     
     private double red;

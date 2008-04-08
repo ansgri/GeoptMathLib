@@ -5,6 +5,7 @@
 
 package geopt.geometry;
 
+import java.io.Serializable;
 import static geopt.geometry.Utils.*;
 
 /**
@@ -13,7 +14,7 @@ import static geopt.geometry.Utils.*;
  * 
  * @author AnSGri.
  */
-public class Sphere implements Cloneable {
+public class Sphere implements Cloneable, Serializable {
 
     // --- Конструктор ---
     

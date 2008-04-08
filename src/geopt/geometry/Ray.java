@@ -2,6 +2,7 @@
 
 package geopt.geometry;
 
+import java.io.Serializable;
 import static geopt.geometry.Utils.*;
 
 /**
@@ -10,7 +11,7 @@ import static geopt.geometry.Utils.*;
  * 
  * @author AnSGri.
  */
-public class Ray implements Cloneable {
+public class Ray implements Cloneable, Serializable {
     
     // --- Конструкторы ---
     
