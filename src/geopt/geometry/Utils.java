@@ -67,6 +67,10 @@ public class Utils {
         assert equalsOne(normal.abs());
         assert n != 0;
         
+        if ( normal.isCollinear(direction) ) {
+            return direction;
+        }
+        
         double normalProjection = normal.smul(direction);
         if ( normalProjection < 0 ) {
             n = 1 / n;            
