@@ -15,6 +15,8 @@ import java.io.Serializable;
  */
 public class Plane implements Cloneable, Serializable{
     
+    private static final long serialVersionUID = 1L;
+        
     // --- Конструктор ---
     
     public Plane(Vector aSomePoint, Vector aNormalVector) 

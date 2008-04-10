@@ -13,6 +13,8 @@ import static geopt.geometry.Utils.*;
  */
 public class Ray implements Cloneable, Serializable {
     
+    private static final long serialVersionUID = 1L;
+    
     // --- Конструкторы ---
     
     public Ray() {

@@ -21,6 +21,8 @@ public class Vector implements Cloneable, Serializable {
     
     // --- Переопределение стандартных методов ---
     
+    private static final long serialVersionUID = 1L;
+    
     @Override
     public String toString() {
         return String.format("(%g; %g; %g)", x, y, z);

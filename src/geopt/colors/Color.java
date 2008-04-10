@@ -17,6 +17,8 @@ import java.io.Serializable;
 public class Color implements Serializable {
     // --- Закрытые поля ---
     
+    private static final long serialVersionUID = 1L;
+    
     private double red;
     private double green;
     private double blue;

@@ -16,6 +16,8 @@ import static geopt.geometry.Utils.*;
  */
 public class Sphere implements Cloneable, Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     // --- Конструктор ---
     
     /**
