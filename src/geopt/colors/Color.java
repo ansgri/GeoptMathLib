@@ -54,6 +54,17 @@ public class Color implements Serializable {
         this.blue = color.getBlue() / 255.0;
     }
     
+    public Color(int argb) {
+        //int alpha = (argb >> 24) & 0xff;
+	int redC   = (argb >> 16) & 0xff;
+	int greenC = (argb >>  8) & 0xff;
+	int blueC  = (argb      ) & 0xff;
+        
+        this.red = redC/255.0;
+        this.green = greenC/255.0;
+        this.blue = blueC/255.0;
+    }
+    
     public int toARGBColor() {
         int r = (int)(255 * getR());
         int g = (int)(255 * getG());
