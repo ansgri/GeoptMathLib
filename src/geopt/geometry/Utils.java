@@ -88,7 +88,21 @@ public class Utils {
         
         Vector result = b.normalize().add(c.normalize().multiply(Math.tan(phi2)));
         
-        return result;        
+        return result;   
+    }
+    
+    public static Vector projectOnVector(Vector vector, Vector vectorToBeProjectedOn) {
+        if ( vectorToBeProjectedOn.isZero() ) {
+            throw new IllegalArgumentException();
+        }
+        
+        return vectorToBeProjectedOn
+                .multiply(Vector.scalarProduct(vector, vectorToBeProjectedOn) 
+                / vectorToBeProjectedOn.square());
+    }
+    
+    public static Vector projectOnPlane(Vector vector, Vector planeNormal) {
+        return vector.subtract(projectOnVector(vector, planeNormal));
     }
     
 }

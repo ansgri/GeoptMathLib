@@ -81,5 +81,26 @@ public class UtilsTest {
             assertTrue(expResults[i].isCodirectional(result));
         }
     }
+    
+    @Test
+    public void projectOnVector() {
+        System.out.println("projectOnVector");
+        Vector[] vectors = new Vector[] {
+            new Vector(1, 0, 0),
+            new Vector(0, 1, 0),
+            new Vector(1, 4, 1)
+        };
+        Vector[] expected = new Vector[] {
+            new Vector(0, 0, 0),
+            new Vector(0, 1, 0),
+            new Vector(0, 4, 0)
+        };
+        
+        Vector axis = new Vector(0, 130.6, 0);
+        
+        for ( int i = 0; i < vectors.length; i++ ) {
+            assertEquals(expected[i], Utils.projectOnVector(vectors[i], axis));
+        }
+    }
 
 }
