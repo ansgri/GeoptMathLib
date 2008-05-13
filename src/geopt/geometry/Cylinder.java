@@ -99,20 +99,19 @@ public class Cylinder implements Cloneable, Serializable {
         Vector d = rayToIntersect.getDirection().normalize();
         Vector ptM = rayToIntersect.getOrigin();
         Vector ptA = axis.origin;
-        Vector vMA = ptM.subtract(ptA);
+        Vector vMA = ptA.subtract(ptM);
         Vector vMA2 = Utils.projectOnPlane(vMA, a);
         Vector d2 = Utils.projectOnPlane(d, a);
         
         Sphere approxSphere = new Sphere(ptM.add(vMA2), radius);
         Vector ptX2 = approxSphere.intersectRay(new Ray(ptM, d2));
-        Vector vMX2 = ptX2.subtract(ptM);
-        
         
         if ( ptX2 == null ) {
             return null;
         }
         
-        Vector vMX = d.multiply(vMX2.abs());
+        Vector vMX2 = ptX2.subtract(ptM);
+        Vector vMX = d.multiply(vMX2.abs() / d2.abs()); // <--- скорее всего, ошибка.
         
         return ptM.add(vMX);
     }
@@ -125,7 +124,21 @@ public class Cylinder implements Cloneable, Serializable {
      * @return Нормаль к цилиндру из данной точки.
      */
     public Vector getNormalAt(Vector intersection) {
-        throw new IllegalArgumentException();
+        return
+                Utils.projectOnPlane(intersection.subtract(axis.getOrigin()), axis.getDirection())
+                .normalize();
+    }
+    
+    /**
+     * 
+     * Проверка того, находится ли данная точка внутри цилиндра.
+     * 
+     * @param pointToTest Проверяемая точка
+     * @return true, если расстояние от точки до оси не больше радиуса.
+     */
+    public boolean isPointInside(Vector pointToTest) {
+        return Utils.projectOnPlane(pointToTest.subtract(axis.getOrigin()), axis.getDirection())
+                .abs() <= radius;
     }
     
 
