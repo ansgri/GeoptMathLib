@@ -240,13 +240,8 @@ public class Vector implements Cloneable, Serializable {
      * @return
      */
     public Vector reflectAround(Vector normal) {
-        if ( normal.isZero() ) {
-            throw new IllegalArgumentException();
-        }
-        Vector nd = normal.normalize();
-        
-        // -This + 2*(This, Nd)*nd         
-        return this.multiply(-1).add(nd.multiply(this.smul(nd)*2)).multiply(-1);
+
+        return Utils.projectOnPlane(this, normal).add(Utils.projectOnVector(this, normal).multiply(-1));
     }
     
     /*
