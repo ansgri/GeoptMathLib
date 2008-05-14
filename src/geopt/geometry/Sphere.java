@@ -68,7 +68,7 @@ public class Sphere implements Cloneable, Serializable {
     
     @Override
     public String toString() {
-        return String.format("Sphere(%s, %g)", center, radius);
+        return "Sphere(" + center.toString() + "; " + Double.toString(radius) + ")";
     }
     
    

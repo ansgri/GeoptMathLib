@@ -43,7 +43,7 @@ public class Cylinder implements Cloneable, Serializable {
     
     @Override
     public String toString() {
-        return String.format("Cylinder(%s, %g)", axis, radius);
+        return "Cylinder(" + axis.toString() + "; " + Double.toString(radius) + ")";
     }
     
     @Override

@@ -25,7 +25,7 @@ public class Vector implements Cloneable, Serializable {
     
     @Override
     public String toString() {
-        return String.format("(%g; %g; %g)", x, y, z);
+        return "(" + Double.toString(x) + "; " + Double.toString(y) + "; " + Double.toString(z) + ")";
     }
     
     /**

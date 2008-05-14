@@ -75,7 +75,7 @@ public class Color implements Serializable {
     
     @Override
     public String toString() {
-        return String.format("(%g; %g; %g)", red, green, blue);
+        return "(" + Double.toString(red) + "; " + Double.toString(green) + "; " + Double.toString(blue) + ")";
     }
     
     @Override
