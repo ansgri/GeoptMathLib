@@ -1,4 +1,3 @@
-
 package geopt.geometry;
 
 import java.io.Serializable;
@@ -7,6 +6,7 @@ import static geopt.geometry.Utils.*;
 /**
  *
  * Вектор в трехмерном геометрическом пространстве.
+ * Кроме как в Векторе, я ЗАПРЕЩАЮ использовать декартовы координаты!
  * 
  * @author AnSGri.
  */

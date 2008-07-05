@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package geopt.geometry;
 
 import java.io.Serializable;
 
 /**
- *
+ * Цилиндр.
+ * !!! НЕ РАБОТАЕТ.
+ * 
  * @author AnSGri.
  */
 public class Cylinder implements Cloneable, Serializable {
@@ -87,6 +84,8 @@ public class Cylinder implements Cloneable, Serializable {
     /**
      * 
      * Нахождение точки пересечения луча с цилиндром.
+     * 
+     * !!! Вот он, корень зла, из-за которого наши трубы не работают.
      * 
      * @param rayToIntersect Пересекаеый луч
      * @return Ближайшее пересечение; null, если такового нет.

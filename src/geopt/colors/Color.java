@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package geopt.colors;
 
 import geopt.geometry.Vector;
@@ -85,6 +80,9 @@ public class Color implements Serializable {
     
     // --- Вспомогательные методы ---
     
+    /**
+     * Отсечение компонент вне [0, 1]
+     */
     public void legalizeIt() {
         if ( red > 1 ) red = 1;
         if ( green > 1 ) green = 1;
@@ -94,7 +92,11 @@ public class Color implements Serializable {
         if ( green < 0 ) green = 0;
         if ( blue < 0 ) blue = 0;
     }
-    
+    /**
+     * Отсечение компонент вне [0, 1]
+     * 
+     * @return Возврат "легализованного" цвета.
+     */    
     public Color legalize() {
         return new Color(
                 ensureInZeroToOne(red),

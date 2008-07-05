@@ -1,5 +1,3 @@
-
-
 package geopt.geometry;
 
 import java.io.Serializable;
